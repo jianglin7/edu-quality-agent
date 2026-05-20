@@ -31,6 +31,7 @@ pip install -e .
 cp .env.example .env        # 按需填写 LLM / 数据库等
 
 python scripts/smoke_compile.py
+python scripts/test_llm_gateway.py   # 需能访问内网 LLM 10.80.5.128:8855
 pytest tests/ -v
 ```
 
