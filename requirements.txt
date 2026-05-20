@@ -1,0 +1,7 @@
+# P0 核心依赖（与架构文档 §14.1 对齐）
+langgraph>=0.3
+langchain-core>=0.3
+pydantic>=2.0
+
+# 开发 / 测试（可选：pip install -r requirements-dev.txt）
+# pytest>=8.0
