@@ -5,6 +5,12 @@ from __future__ import annotations
 
 import asyncio
 import sys
+from pathlib import Path
+
+# 保证从任意 cwd 执行脚本时都能 import edu_quality_agent
+_ROOT = Path(__file__).resolve().parents[1]
+if str(_ROOT) not in sys.path:
+    sys.path.insert(0, str(_ROOT))
 
 
 async def main() -> int:

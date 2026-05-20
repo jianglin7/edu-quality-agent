@@ -11,27 +11,40 @@
 
 - Python **3.11+**
 - Git
+- （推荐）Conda
 
 ## 快速开始
+
+### Conda（服务器推荐）
 
 ```bash
 git clone https://github.com/jianglin7/edu-quality-agent.git
 cd edu-quality-agent
 
-python3 -m venv .venv
-source .venv/bin/activate   # Windows: .venv\Scripts\activate
+conda create -n edu_quality_agent python=3.11 -y
+conda activate edu_quality_agent
 
 pip install -U pip
 pip install -r requirements-dev.txt
+pip install -e .
 
 cp .env.example .env        # 按需填写 LLM / 数据库等
 
-# 冒烟：compile_app() 编译并 invoke 一次
 python scripts/smoke_compile.py
-
-# 单元测试
 pytest tests/ -v
 ```
+
+### venv（本地可选）
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-dev.txt
+pip install -e .
+python scripts/smoke_compile.py
+```
+
+详细部署见 [docs/deploy/README.md](docs/deploy/README.md)。CI 见 [GitHub Actions](https://github.com/jianglin7/edu-quality-agent/actions)。
 
 ## 目录结构
 
